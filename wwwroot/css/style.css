@@ -1,0 +1,118 @@
+:root {
+  --slate: #778899;
+  --slate-escuro: #5f6f7f;
+  --cinza: #D3D3D3;
+  --azul-aco: #B0C4DE;
+  --azul-claro: #ADD8E6;
+  --fundo: #F5F5F5;
+  --texto: #2f3a45;
+}
+
+* { box-sizing: border-box; border-radius: 0; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--texto);
+  background: linear-gradient(135deg, var(--azul-aco) 0%, var(--azul-claro) 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem 2rem 2rem;
+  background: var(--fundo);
+  border: 1px solid var(--cinza);
+  border-top: 6px solid var(--slate);
+  box-shadow: 10px 10px 0 var(--slate);
+}
+
+.card__eyebrow {
+  margin: 0 0 .4rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.card__title {
+  margin: 0 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cinza);
+  font-family: "Chivo", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.field { margin-bottom: 1.1rem; }
+
+.field label {
+  display: block;
+  margin-bottom: .4rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--slate-escuro);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: .7rem .8rem;
+  font: inherit;
+  font-size: .9rem;
+  color: var(--texto);
+  background: #fff;
+  border: 1px solid var(--cinza);
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.field textarea { resize: vertical; }
+
+.field input::placeholder,
+.field textarea::placeholder { color: #a3adb7; }
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--slate);
+  box-shadow: 0 0 0 3px var(--azul-claro);
+}
+
+.btn {
+  width: 100%;
+  margin-top: .5rem;
+  padding: .85rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--slate);
+  border: 0;
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.btn:hover { background: var(--slate-escuro); }
+.btn:focus-visible { outline: 3px solid var(--azul-claro); outline-offset: 2px; }
+.btn:disabled { opacity: .6; cursor: wait; }
+
+#status {
+  min-height: 1.4rem;
+  margin-top: 1rem;
+  font-size: .85rem;
+}
+#status.ok { color: #2e6b45; }
+#status.erro { color: #a33a3a; }

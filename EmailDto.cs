@@ -1,0 +1,1 @@
+public record EmailDto(string Para, string Assunto, string Corpo);
