@@ -38,4 +38,7 @@ C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\EmailDemo.pdb
 C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\EmailDemo.genruntimeconfig.cache
 C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\ref\EmailDemo.dll
 C:\Users\Beatriz\Projetos escolares\EmailDemo\bin\Debug\net9.0\EmailDemo.staticwebassets.runtime.json
-C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\compressed\5omge2lad6-cb491lgx3b.gz
+C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\EmailDemo.sourcelink.json
+C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\compressed\tcxbda7emp-oookttmhah.gz
+C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\compressed\t545leevsu-5d4eoo3zgd.gz
+C:\Users\Beatriz\Projetos escolares\EmailDemo\obj\Debug\net9.0\compressed\5omge2lad6-owwbw2663r.gz
