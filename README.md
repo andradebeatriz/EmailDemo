@@ -10,7 +10,7 @@ Aplicação de exemplo para envio de e-mails usando ASP.NET Core, MailKit/MimeKi
 - Endpoint HTTP `POST /api/email` que recebe os dados da mensagem em JSON.
 - Montagem de e-mail HTML e envio assíncrono usando MailKit/MimeKit.
 - Configuração do servidor SMTP por `EmailSettings`.
-- Interface para o ASP.NET Core em `wwwroot/` e versão estática para GitHub Pages em `docs/`.
+- Interface para o ASP.NET Core em `wwwroot/` e arquivos estáticos na raiz do repositório para GitHub Pages.
 
 ## Tecnologias
 
@@ -78,7 +78,8 @@ Quando o envio for aceito, a API responde `E-mail enviado!`. Com Mailtrap, confi
 | `EmailSettings.cs` | Representa as configurações do servidor SMTP. |
 | `appsettings.json` | Guarda as configurações não secretas do projeto. |
 | `wwwroot/` | Contém a interface web, estilos e favicon. |
-| `docs/` | Cópia estática da interface para publicação pelo GitHub Pages. |
+| `index.html`, `css/`, `favicon.svg` | Cópia estática da interface na raiz para publicação pelo GitHub Pages. |
+| `docs/` | Cópia estática alternativa da interface, caso o Pages seja configurado para publicar essa pasta. |
 
 ## Publicar a interface no GitHub Pages
 
@@ -86,11 +87,11 @@ O GitHub Pages hospeda apenas arquivos estáticos. A interface pode ser publicad
 
 1. Envie este repositório para o GitHub.
 2. No repositório, acesse **Settings → Pages**.
-3. Em **Build and deployment**, escolha **Deploy from a branch**, selecione a branch `main` e a pasta `/docs`, depois clique em **Save**.
-4. Edite `docs/index.html` e preencha `API_BASE_URL` com a URL HTTPS da API publicada, sem a barra final.
+3. Em **Build and deployment**, escolha **Deploy from a branch**, selecione a branch `main` e a pasta `/(root)`, depois clique em **Save**. A raiz contém `index.html`, que será a página inicial.
+4. Edite `index.html` e preencha `API_BASE_URL` com a URL HTTPS da API publicada, sem a barra final.
 5. Configure a API para permitir a origem do site em CORS. No ambiente da API, defina `Cors__AllowedOrigins__0` com a origem do Pages, por exemplo `https://SEU_USUARIO.github.io` (sem caminho do repositório). Reinicie a API após alterar a configuração.
 
-O GitHub Pages publica a pasta `docs` na raiz do site. Os caminhos de CSS e favicon são relativos para funcionar também em sites de projeto, cujo endereço contém o nome do repositório. Enquanto `API_BASE_URL` estiver vazia, a página servida pelo ASP.NET Core local continua chamando `/api/email`; a cópia do Pages ainda não tem uma API configurada.
+Os caminhos de CSS e favicon são relativos para funcionar também em sites de projeto, cujo endereço contém o nome do repositório. Enquanto `API_BASE_URL` estiver vazia, a página servida pelo ASP.NET Core local continua chamando `/api/email`; a cópia do Pages ainda não tem uma API configurada. Se preferir publicar pela pasta `/docs`, configure essa pasta como origem no Pages e edite `docs/index.html` com a URL da API.
 
 ## Segurança
 
