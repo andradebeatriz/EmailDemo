@@ -1,0 +1,29 @@
+# Build e restore do .NET
+bin/
+obj/
+out/
+
+# User-specific IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Segredos e configurações locais
+appsettings.Local.json
+appsettings.*.Local.json
+secrets.json
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.temp
+*.swp
+*.bak
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
