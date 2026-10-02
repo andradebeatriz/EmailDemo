@@ -10,7 +10,14 @@ public class EmailController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Enviar([FromBody] EmailDto email)
     {
-        await _emailService.EnviarAsync(email);
-        return Ok("E-mail enviado!");
+        try
+        {
+            await _emailService.EnviarAsync(email);
+            return Ok("E-mail enviado!");
+        }
+        catch (Exception)
+        {
+            return StatusCode(502, "Não foi possível enviar o e-mail no momento.");
+        }
     }
 }

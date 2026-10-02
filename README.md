@@ -81,18 +81,6 @@ Quando o envio for aceito, a API responde `E-mail enviado!`. Com Mailtrap, confi
 | `index.html`, `css/`, `favicon.svg` | Cópia estática da interface na raiz para publicação pelo GitHub Pages. |
 | `docs/` | Cópia estática alternativa da interface, caso o Pages seja configurado para publicar essa pasta. |
 
-## Publicar a interface no GitHub Pages
-
-O GitHub Pages hospeda apenas arquivos estáticos. A interface pode ser publicada pela pasta `docs`, mas o endpoint de envio precisa continuar em uma API ASP.NET Core hospedada separadamente.
-
-1. Envie este repositório para o GitHub.
-2. No repositório, acesse **Settings → Pages**.
-3. Em **Build and deployment**, escolha **Deploy from a branch**, selecione a branch `main` e a pasta `/(root)`, depois clique em **Save**. A raiz contém `index.html`, que será a página inicial.
-4. Edite `index.html` e preencha `API_BASE_URL` com a URL HTTPS da API publicada, sem a barra final.
-5. Configure a API para permitir a origem do site em CORS. No ambiente da API, defina `Cors__AllowedOrigins__0` com a origem do Pages, por exemplo `https://SEU_USUARIO.github.io` (sem caminho do repositório). Reinicie a API após alterar a configuração.
-
-Os caminhos de CSS e favicon são relativos para funcionar também em sites de projeto, cujo endereço contém o nome do repositório. Enquanto `API_BASE_URL` estiver vazia, a página servida pelo ASP.NET Core local continua chamando `/api/email`; a cópia do Pages ainda não tem uma API configurada. Se preferir publicar pela pasta `/docs`, configure essa pasta como origem no Pages e edite `docs/index.html` com a URL da API.
-
 ## Segurança
 
 - Mantenha credenciais SMTP fora do código e do controle de versão.
